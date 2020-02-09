@@ -29,9 +29,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third-party apps
     'rest_framework',
+    'django_rest_passwordreset',
     # custom installed apps
     'user.apps.UserConfig'
 ]
+
+DJANGO_REST_LOOKUP_FIELD = 'email'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+DEFAULT_FROM_EMAIL = 'tashkent.1997.1.7@gmail.com'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,7 +60,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
