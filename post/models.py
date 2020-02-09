@@ -35,7 +35,7 @@ class Post(models.Model):
         return "{}'s post {}...".format(self.author, self.title)
 
     @property
-    def comments(self):
+    def get_comments(self):
         return self.comments.all()
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
