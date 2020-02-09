@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     # custom installed apps
     'user.apps.UserConfig',
     'post.apps.PostConfig',
+    'comment.apps.CommentConfig',
 ]
 
 DJANGO_REST_LOOKUP_FIELD = 'email'
