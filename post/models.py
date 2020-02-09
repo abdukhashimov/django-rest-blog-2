@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from comment.models import Comment
 
 
 class Category(models.Model):
@@ -27,7 +26,6 @@ class Post(models.Model):
     content = models.TextField()
     tag = models.ManyToManyField(Tag, blank=True)
     category = models.ManyToManyField(Category)
-    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

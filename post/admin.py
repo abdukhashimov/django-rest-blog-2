@@ -4,7 +4,7 @@ from post.models import Post, Category, Tag
 
 
 class PostAdmin(admin.ModelAdmin):
-    fields = ('title', 'thumbnail', 'content', 'tag', 'category', 'comment')
+    fields = ('title', 'thumbnail', 'content', 'tag', 'category')
 
     def save_model(self, request, obj, form, change):
         obj.author = request.user
