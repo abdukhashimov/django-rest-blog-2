@@ -34,6 +34,10 @@ class Post(models.Model):
             return "{}'s post {}...".format(self.author, self.title)
         return "{}'s post {}...".format(self.author, self.title)
 
+    @property
+    def comments(self):
+        return self.comments.all()
+
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         self.title = str(self.title).title()
         return super().save(force_insert=force_insert, force_update=force_update, using=using, update_fields=update_fields)

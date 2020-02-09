@@ -25,7 +25,8 @@ class Comment(models.Model):
         'self', related_name='reply', null=True, blank=True,
         on_delete=models.CASCADE
     )
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    post = models.ForeignKey(
+        Post, related_name='comments', on_delete=models.CASCADE)
 
     objects = CommentManager()
 
