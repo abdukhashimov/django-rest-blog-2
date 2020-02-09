@@ -42,10 +42,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
+    @property
+    def get_profile_picture(self):
+        return self.profile.profile_picture.url
+
 
 class UserInfo(models.Model):
     profile_user = models.OneToOneField(
-        get_user_model(), on_delete=models.CASCADE)
+        get_user_model(), related_name='profile', on_delete=models.CASCADE)
     bio = models.TextField(max_length=255, blank=True, null=True)
     profile_picture = models.ImageField(
         upload_to='profile_picture', blank=True, null=True)

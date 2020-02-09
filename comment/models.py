@@ -1,6 +1,7 @@
 from django.db import models
-from django.contrib.auth import get_user_model
 from post.models import Post
+from django.contrib.auth import get_user_model
+from django.contrib.admin.utils import NestedObjects
 
 
 class CommentManager(models.Manager):
