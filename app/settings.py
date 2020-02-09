@@ -31,7 +31,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_rest_passwordreset',
     # custom installed apps
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'post.apps.PostConfig',
 ]
 
 DJANGO_REST_LOOKUP_FIELD = 'email'
