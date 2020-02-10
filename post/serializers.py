@@ -9,7 +9,6 @@ class PostListSerializer(serializers.ModelSerializer):
     url = serializers.HyperlinkedIdentityField(
         view_name='post-detail',
         read_only=True,
-        lookup_field='id'
     )
 
     class Meta:
