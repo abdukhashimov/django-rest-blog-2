@@ -38,7 +38,7 @@ class Post(models.Model):
 
     @property
     def get_comments(self):
-        return self.comments.all()
+        return self.comments.filter(parent_id__isnull=True)
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         self.title = str(self.title).title()
