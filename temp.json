@@ -1,0 +1,47 @@
+{
+    "title": "This Is The Best Post",
+    "thumbnail": "/media/thumbnails/logo_Iw9ApYV.png",
+    "author": "abdukhashimov@yandex.ru",
+    "content": "This is the best comment",
+    "tag": [],
+    "category": ["techonology"],
+    "timestamp": "2020-02-09T16:28:55.591626Z",
+    "comment": {
+        "0": {
+            "user": {
+                "email": "abdukhashimov@yandex.ru",
+                "profile_picture": "/media/profile_picture/logo_54VlrQA.png"
+            },
+            "comment": "Thank you very much",
+            "replies": [
+                {
+                    "user": "abdukhashimov@yandex.ru",
+                    "reply": {
+                        "text": "Thank tou reply to self",
+                        "created_at": "2020-02-09 17:35:06.558010+00:00",
+                        "parent_id": "2"
+                    }
+                }
+            ],
+            "created_at": "2020-02-0916:39:45.938559+00:00"
+        },
+        "1": {
+            "user": {
+                "email": "abdukhashimov@yandex.ru",
+                "profile_picture": "/media/profile_picture/logo_54VlrQA.png"
+            },
+            "comment": "1: How are you doing?",
+            "replies": [
+                {
+                    "user": "abdukhashimov@yandex.ru",
+                    "reply": {
+                        "text": "This is damn cool",
+                        "created_at": "2020-02-09 17:36:12.790939+00:00",
+                        "parent_id": "1"
+                    }
+                }
+            ],
+            "created_at": "2020-02-09 16:35:33.963433+00:00"
+        }
+    }
+}
