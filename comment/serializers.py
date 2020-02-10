@@ -5,10 +5,11 @@ from comment.models import Comment
 class CommentSerializer(serializers.ModelSerializer):
     replies = serializers.SerializerMethodField()
     user = serializers.SerializerMethodField()
+    created_at = serializers.SerializerMethodField()
 
     class Meta:
         model = Comment
-        fields = ('user', 'comment', 'replies')
+        fields = ('user', 'comment', 'replies', 'created_at')
 
     def get_user(self, obj):
         output = {}
@@ -24,8 +25,11 @@ class CommentSerializer(serializers.ModelSerializer):
             comment_dict['user'] = str(comment.user)
             comment_dict['reply'] = {
                 'text': comment.comment,
-                'created_at': comment.created_at,
-                'parent_id': comment.parent_id
+                'created_at': str(comment.created_at),
+                'parent_id': str(comment.parent_id)
             }
             reply.append(comment_dict.copy())
         return reply
+
+    def get_created_at(self, obj):
+        return str(obj.created_at)

@@ -44,7 +44,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @property
     def get_profile_picture(self):
-        return self.profile.profile_picture.url
+        return "http://localhost:8000" + self.profile.profile_picture.url
 
 
 class UserInfo(models.Model):
